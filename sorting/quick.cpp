@@ -22,14 +22,28 @@ void swap(int *num1, int *num2)
 
 void quickSort(int left, int right, array<int, SIZE> &numbers)
 {
-    // int pivot = left;
-    // int i = left;
-    // int j = right;
-    // for (; i <= j; i++)
-    // {
-    //     if(numbers[i] > numbers[pivot])
-    // }
-    // 테스트3
+    int pivot = left;
+    int i = left + 1;
+    int j = right;
+    while (true)
+    {
+        while (i <= right && numbers[i] < numbers[pivot])
+        {
+            i++;
+        }
+        while (j >= left && numbers[j] > numbers[pivot])
+        {
+            j--;
+        }
+        swap(&numbers[i], &numbers[j]);
+        if (j < i)
+        {
+            swap(&numbers[pivot], &numbers[j]);
+            break;
+        }
+    }
+    quickSort(i, pivot - 1, numbers);
+    quickSort(pivot + 1, j, numbers);
 }
 
 int main()
