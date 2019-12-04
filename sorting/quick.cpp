@@ -29,7 +29,7 @@ void quickSort(int left, int right, array<int, SIZE> &numbers)
     // {
     //     if(numbers[i] > numbers[pivot])
     // }
-    // 테스트2
+    // 테스트3
 }
 
 int main()
