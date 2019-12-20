@@ -20,29 +20,18 @@ void swap(int *num1, int *num2)
     *num2 = temp;
 }
 
-void insertionSort(array<int, SIZE> &numbers)
+void mergeSort(array<int, SIZE> &numbers)
 {
-    for (int i = 0; i < numbers.size(); i++)
-    {
-        for (int j = i; j > 0; j--)
-        {
-            if (numbers[j - 1] <= numbers[j])
-                break;
-            if (numbers[j - 1] > numbers[j])
-            {
-                swap(&numbers[j - 1], &numbers[j]);
-            }
-        }
-    }
+
 }
 
 int main()
 {
     array<int, SIZE> numbers = {4, 1, 9, 32, 15, 8, 10, 12, 3, 6};
-    cout << "Before insertion sorting : ";
+    cout << "Before merge sorting : ";
     printNumbers(numbers);
-    insertionSort(numbers);
-    cout << "After insertion sorting : ";
+    mergeSort(numbers);
+    cout << "After merge sorting : ";
     printNumbers(numbers);
     return 0;
 }
