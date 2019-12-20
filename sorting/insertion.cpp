@@ -22,15 +22,17 @@ void swap(int *num1, int *num2)
 
 void insertionSort(array<int, SIZE> &numbers)
 {
-    int i, j;
-    for (i = 0; i < numbers.size(); i++)
+    for (int i = 0; i < numbers.size() - 1; i++)
     {
-        int temp = numbers[i];
-        for (j = i - 1; j >= 0 && numbers[j] > temp; j--)
+        for (int j = i + 1; j >= 0; j--)
         {
-            swap(&numbers[j], &numbers[j - 1]);
+            if (numbers[j - 1] < numbers[j])
+                break;
+            if (numbers[j - 1] > numbers[j])
+            {
+                swap(&numbers[j - 1], &numbers[j]);
+            }
         }
-        // numbers[j] = temp;
     }
 }
 
