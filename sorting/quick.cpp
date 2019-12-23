@@ -44,7 +44,7 @@ void quickSort(int left, int right, int *numbers)
 
 int main()
 {
-    int numbers[SIZE] = {4, 1, 9, 32, 15, 8, 10, 12, 3, 6};
+    int numbers[SIZE] = {4, 1, 9, 2, 7, 3, 8, 10, 6, 5};
     cout << "Before quick sorting : ";
     printNumbers(numbers);
     quickSort(0, SIZE - 1, numbers);
