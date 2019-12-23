@@ -21,7 +21,7 @@ void swap(int *num1, int *num2)
 
 void mergeSort(int *numbers)
 {
-    swap(numbers[0], numbers[2]);
+    return;
 }
 
 int main()
