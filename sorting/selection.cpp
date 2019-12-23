@@ -1,12 +1,11 @@
 #include <iostream>
-#include <array>
 #define SIZE 10
 
 using namespace std;
 
-void printNumbers(array<int, SIZE> &numbers)
+void printNumbers(int *numbers)
 {
-    for (int i = 0; i < numbers.size(); i++)
+    for (int i = 0; i < SIZE; i++)
     {
         cout << numbers[i] << ' ';
     }
@@ -19,14 +18,13 @@ void swap(int *num1, int *num2)
     *num1 = *num2;
     *num2 = temp;
 }
-
-void selectionSort(array<int, SIZE> &numbers)
+void selectionSort(int *numbers)
 {
     int index;
-    for (int i = 0; i < numbers.size() - 1; i++)
+    for (int i = 0; i < SIZE - 1; i++)
     {
         index = i;
-        for (int j = i + 1; j < numbers.size(); j++)
+        for (int j = i + 1; j < SIZE; j++)
         {
             if (numbers[j] < numbers[index])
             {
@@ -42,7 +40,7 @@ void selectionSort(array<int, SIZE> &numbers)
 
 int main()
 {
-    array<int, SIZE> numbers = {4, 1, 9, 32, 15, 8, 10, 12, 3, 6};
+    int numbers[SIZE] = {4, 1, 9, 32, 15, 8, 10, 12, 3, 6};
     cout << "Before selection sorting : ";
     printNumbers(numbers);
     selectionSort(numbers);

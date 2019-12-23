@@ -1,12 +1,11 @@
 #include <iostream>
-#include <array>
 #define SIZE 10
 
 using namespace std;
 
-void printNumbers(array<int, SIZE> &numbers)
+void printNumbers(int *numbers)
 {
-    for (int i = 0; i < numbers.size(); i++)
+    for (int i = 0; i < SIZE; i++)
     {
         cout << numbers[i] << ' ';
     }
@@ -20,9 +19,9 @@ void swap(int *num1, int *num2)
     *num2 = temp;
 }
 
-void insertionSort(array<int, SIZE> &numbers)
+void insertionSort(int *numbers)
 {
-    for (int i = 0; i < numbers.size(); i++)
+    for (int i = 0; i < SIZE; i++)
     {
         for (int j = i; j > 0; j--)
         {
@@ -38,7 +37,7 @@ void insertionSort(array<int, SIZE> &numbers)
 
 int main()
 {
-    array<int, SIZE> numbers = {4, 1, 9, 32, 15, 8, 10, 12, 3, 6};
+    int numbers[SIZE] = {4, 1, 9, 32, 15, 8, 10, 12, 3, 6};
     cout << "Before insertion sorting : ";
     printNumbers(numbers);
     insertionSort(numbers);
